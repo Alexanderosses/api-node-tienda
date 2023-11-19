@@ -19,7 +19,7 @@ const createPost = async (req, res) => {
 const getPosts = async (req, res) => {
     try {
         const resp = await Post.find()
-                .populate('category')
+                .populate('post')
                 .populate('user')
         return res.json({
             message: 'Posts',

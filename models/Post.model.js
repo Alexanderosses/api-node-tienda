@@ -24,8 +24,8 @@ const postSchema = new mongoose.Schema({
     pendiente: { type: Number },
     materialDelProducto: { type: String },
     display: { type: String },
-},
-{ timestamps: true });
+    user: { type: mongoose.ObjectId, ref: 'User' }
+})
 
 const Post = mongoose.model('Post', postSchema)
 

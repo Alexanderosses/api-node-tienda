@@ -1,29 +1,47 @@
-const User = require('../models/User.model')
-const bcrypt = require('bcrypt')
+const User = require('../models/User.model');
+const bcrypt = require('bcrypt');
 
 const signUp = async (req, res) => {
     try {
-        const { mail, password } = req.body
-        const existingUser = await User.findOne({mail})
-        if(existingUser){
+        const { firstName, lastName, dob, mail, password } = req.body;
+
+        // Validar que los campos requeridos no sean nulos o indefinidos
+        if (!firstName || !lastName || !dob || !mail || !password) {
             return res.json({
-                message: "user already exists"
-            })
+                message: "Todos los campos son obligatorios"
+            });
         }
-        const user = new User(req.body)
-        user.hashPassword(password)
-        await user.save()
+
+        const existingUser = await User.findOne({ mail });
+        if (existingUser) {
+            return res.json({
+                message: "El usuario ya existe"
+            });
+        }
+
+        const user = new User({
+            firstName,
+            lastName,
+            dob,
+            mail,
+            password,
+        });
+
+        user.hashPassword(password);
+        await user.save();
+
         return res.json({
-            message: 'User was created successfully',
+            message: 'Usuario creado exitosamente',
             detail: user.onSignUpGenerateJWT()
-        })
+        });
     } catch (err) {
         return res.json({
             message: 'Error',
             detail: err.message
-        })
+        });
     }
-}
+};
+
 
 const login = async (req, res) => {
     try {
