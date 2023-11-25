@@ -16,7 +16,7 @@ Mercado_Pago.post("/", async (req, res) => {
     const preference = {
       items: [
         {
-            title: product.marca,
+            //title: product.marca,
             title: product.modelo,
             unit_price: product.precioOferta,
             currency_id: "CLP",
