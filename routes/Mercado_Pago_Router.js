@@ -16,20 +16,21 @@ Mercado_Pago.post("/", async (req, res) => {
     const preference = {
       items: [
         {
-            title: product.marca,
+            //title: product.marca,
+            title: product.modelo,
             unit_price: product.precioOferta,
             currency_id: "CLP",
-            quantity: 1
-            //title: producto.nombre,
-            //picture_url: "https://alexanderosses.cl/img/catalogo/Thunder-3.webp",
-            //unit_price: producto.precio,
-            //description: "esto es una descripcion del producto Dualtron X",
-            //quantity: producto.cantidad,
+            quantity: 1,
+            //quantity: product.cantidad,
+            //title: "xxxx",            
+            //unit_price: 2500,
+            //picture_url: "https://alexanderosses.cl/img/catalogo/Thunder-3.webp",            
+            //description: "esto es una descripcion del producto Dualtron X",           
         },
       ],
       back_urls: {
-        success: "https://api-node-tienda.onrender.com/TIENDA-EN-LINEA/#/Modelos",
-        failure: "https://api-node-tienda.onrender.com/TIENDA-EN-LINEA/#/Modelos",
+        success: "https://alexanderosses.github.io/TIENDA-EN-LINEA/#/Modelos",
+        failure: "https://alexanderosses.github.io/TIENDA-EN-LINEA/#/Modelos",
       },
       auto_return: "approved",
     };
