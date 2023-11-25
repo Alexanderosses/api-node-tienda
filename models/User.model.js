@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
     firstName: { type: String },
     lastName: { type: String },
     dob: { type: Date },
-    mail: { type: String }, // Haciendo que el campo sea único y requerido
+    mail: { type: String },
     password: { type: String }
 })
 

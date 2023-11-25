@@ -1,7 +1,7 @@
 {
   "name": "crud-clase-20",
   "version": "1.0.0",
-  "description": "",
+  "description": "Midleware de la tienda en lineaad ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,6 +17,7 @@
     "express": "^4.18.2",
     "express-jwt": "^8.4.1",
     "jsonwebtoken": "^9.0.2",
+    "mercadopago": "^1.5.17",
     "mongoose": "^7.6.1",
     "nodemon": "^3.0.1"
   }

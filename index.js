@@ -5,6 +5,9 @@ const express = require('express'),
 const app = express()
 const cors = require('cors')
 
+//*- Importacion De Rutas :
+const Mercado_Pago = require("./routes/Mercado_Pago_Router");
+
 const corsOptions = {
     origin: '*', // Reemplaza esto con el dominio permitido
     methods: 'GET,PUT,POST,DELETE',
@@ -14,6 +17,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 app.use(express.json())
+app.use("/Mercado_Pago", Mercado_Pago);
 
 mongoose.connect(process.env.MONGO_URI)
 
