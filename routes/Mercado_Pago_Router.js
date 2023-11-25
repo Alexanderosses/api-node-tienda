@@ -22,7 +22,7 @@ Mercado_Pago.post("/", async (req, res) => {
             currency_id: "CLP",
             quantity: 1,
             //quantity: product.cantidad,
-            //title: "xxxx",            
+            //title: "Alexander",            
             //unit_price: 2500,
             //picture_url: "https://alexanderosses.cl/img/catalogo/Thunder-3.webp",            
             //description: "esto es una descripcion del producto Dualtron X",           
